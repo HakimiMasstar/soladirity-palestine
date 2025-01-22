@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Stand With Palestine</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .team-member {
+            background: #fff;
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .team-member:hover {
+            transform: translateY(-5px);
+        }
+
+        .team-member img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+        }
+
+        .mission-values {
+            background: #f9f9f9;
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+
+        .mission-values ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .mission-values li {
+            padding: 0.5rem 0;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .mission-values li:before {
+            content: "•";
+            color: #4CAF50;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .impact-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .stat {
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="burger-menu">
+            <div class="burger-bar"></div>
+            <div class="burger-bar"></div>
+            <div class="burger-bar"></div>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="news.html">News</a>
+            <a href="about.html" class="active">About</a>
+            <a href="get-involved.html">Get Involved</a>
+            <a href="contact.html">Contact Us</a>
+        </div>
+    </nav>
+
+    <div class="content">
+        <h1>About Our Movement</h1>
+        <p>We are a solidarity movement dedicated to supporting the Palestinian cause through humanitarian aid, advocacy, and awareness.</p>
+
+        <h2>Our History</h2>
+        <p>Since our founding, we have been committed to raising awareness about the Palestinian struggle and providing direct humanitarian support to affected communities.</p>
+
+        <div class="team-grid">
+            <div class="team-member">
+                <img src="images/team-1.jpg" alt="Aid Coordinator">
+                <h3>Sarah Ahmed</h3>
+                <p>Humanitarian Aid Coordinator</p>
+                <p>Coordinates emergency relief efforts and medical supply distribution.</p>
+            </div>
+
+            <div class="team-member">
+                <img src="images/team-2.jpg" alt="Community Organizer">
+                <h3>Mohammed Hassan</h3>
+                <p>Community Outreach Director</p>
+                <p>Leads community engagement and awareness campaigns.</p>
+            </div>
+
+            <div class="team-member">
+                <img src="images/team-3.jpg" alt="Medical Coordinator">
+                <h3>Dr. Lisa Chen</h3>
+                <p>Medical Program Director</p>
+                <p>Oversees medical aid initiatives and healthcare support.</p>
+            </div>
+        </div>
+
+        <div class="mission-values">
+            <h2>Our Core Values</h2>
+            <ul>
+                <li>Humanitarian Support: Providing essential aid and resources</li>
+                <li>Advocacy: Raising awareness and promoting justice</li>
+                <li>Community: Building strong support networks</li>
+                <li>Education: Sharing knowledge and understanding</li>
+            </ul>
+        </div>
+
+        <div class="impact-section">
+            <h2>Our Impact</h2>
+            <div class="impact-stats">
+                <div class="stat">
+                    <h3>Medical Aid</h3>
+                    <p>Delivered essential medical supplies to hospitals and clinics</p>
+                </div>
+                <div class="stat">
+                    <h3>Education</h3>
+                    <p>Supported students with resources and learning materials</p>
+                </div>
+                <div class="stat">
+                    <h3>Community Support</h3>
+                    <p>Organized awareness events and solidarity campaigns</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 Stand With Palestine. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.querySelector('.burger-menu').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+    </script>
+</body>
+</html> 

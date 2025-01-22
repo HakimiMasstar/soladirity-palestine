@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News - Stand With Palestine</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .news-item {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            overflow: hidden;
+        }
+
+        .news-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .news-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .news-content {
+            padding: 1.5rem;
+        }
+
+        .news-filters {
+            margin: 2rem 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .search-box {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .search-box input {
+            padding: 0.5rem 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            min-width: 250px;
+        }
+
+        .filter-buttons {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 4px;
+            background: #f0f0f0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn.active {
+            background: #4CAF50;
+            color: white;
+        }
+
+        .share-buttons {
+            margin-top: 2rem;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .share-btn {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            background: #1877f2;
+            color: white;
+            cursor: pointer;
+            transition: opacity 0.3s ease;
+        }
+
+        .share-btn:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="burger-menu">
+            <div class="burger-bar"></div>
+            <div class="burger-bar"></div>
+            <div class="burger-bar"></div>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="news.html" class="active">News</a>
+            <a href="about.html">About</a>
+            <a href="get-involved.html">Get Involved</a>
+            <a href="contact.html">Contact Us</a>
+        </div>
+    </nav>
+
+    <div class="content">
+        <h1>Latest News</h1>
+        
+        <div class="news-filters">
+            <div class="search-box">
+                <input type="text" id="searchNews" placeholder="Search news...">
+                <button onclick="searchNews()">Search</button>
+            </div>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="humanitarian">Humanitarian</button>
+                <button class="filter-btn" data-filter="medical">Medical</button>
+                <button class="filter-btn" data-filter="education">Education</button>
+            </div>
+        </div>
+
+        <div class="news-grid">
+            <div class="news-item">
+                <img src="images/aid-delivery.jpg" alt="Aid delivery">
+                <div class="news-content">
+                    <h3>Humanitarian Aid Reaches Communities</h3>
+                    <p>Date: March 15, 2024</p>
+                    <p>Successfully delivered essential supplies including food, water, and medical equipment to affected areas.</p>
+                    <a href="#" class="read-more">Read more</a>
+                </div>
+            </div>
+            
+            <div class="news-item">
+                <img src="images/medical-mission.jpg" alt="Medical mission">
+                <div class="news-content">
+                    <h3>Medical Mission Update</h3>
+                    <p>Date: March 10, 2024</p>
+                    <p>Our medical team provided critical care and supplies to local hospitals.</p>
+                    <a href="#" class="read-more">Read more</a>
+                </div>
+            </div>
+            
+            <div class="news-item">
+                <img src="images/education-initiative.jpg" alt="Education initiative">
+                <div class="news-content">
+                    <h3>Education Support Program Launch</h3>
+                    <p>Date: March 5, 2024</p>
+                    <p>New initiative to provide educational resources and support for students.</p>
+                    <a href="#" class="read-more">Read more</a>
+                </div>
+            </div>
+            
+            <div class="news-item">
+                <img src="images/solidarity-march.jpg" alt="Solidarity March">
+                <div class="news-content">
+                    <h3>Community Solidarity March</h3>
+                    <p>Date: March 1, 2024</p>
+                    <p>Hundreds gathered for our peaceful solidarity march, raising awareness and support.</p>
+                    <a href="#" class="read-more">Read more</a>
+                </div>
+            </div>
+            
+            <div class="news-item">
+                <img src="images/fundraising-success.jpg" alt="Fundraising Event">
+                <div class="news-content">
+                    <h3>Emergency Fund Drive Success</h3>
+                    <p>Date: February 25, 2024</p>
+                    <p>Community fundraising efforts exceed goals, enabling expanded aid programs.</p>
+                    <a href="#" class="read-more">Read more</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="news-categories">
+            <h2>Categories</h2>
+            <ul>
+                <li><a href="#">Humanitarian Aid</a></li>
+                <li><a href="#">Medical Support</a></li>
+                <li><a href="#">Education Initiatives</a></li>
+                <li><a href="#">Community Events</a></li>
+                <li><a href="#">Advocacy Updates</a></li>
+            </ul>
+        </div>
+
+        <div class="share-buttons">
+            <button class="share-btn" onclick="shareOnFacebook()">Share on Facebook</button>
+            <button class="share-btn" onclick="shareOnTwitter()">Share on Twitter</button>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 Stand With Palestine. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.querySelector('.burger-menu').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+
+        // Filter functionality
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const newsItems = document.querySelectorAll('.news-item');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const filter = btn.dataset.filter;
+                filterNews(filter);
+            });
+        });
+
+        function filterNews(category) {
+            newsItems.forEach(item => {
+                if (category === 'all' || item.dataset.category === category) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        // Search functionality
+        function searchNews() {
+            const searchTerm = document.getElementById('searchNews').value.toLowerCase();
+            newsItems.forEach(item => {
+                const text = item.textContent.toLowerCase();
+                item.style.display = text.includes(searchTerm) ? 'block' : 'none';
+            });
+        }
+    </script>
+</body>
+</html> 
