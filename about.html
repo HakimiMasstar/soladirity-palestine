@@ -5,7 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About - Stand With Palestine</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
+        .about-header {
+            background: #f0f0f0;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow-neu);
+        }
+
         .team-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -14,12 +23,12 @@
         }
 
         .team-member {
-            background: #fff;
-            border-radius: 8px;
+            background: #f0f0f0;
+            border-radius: 12px;
             padding: 1.5rem;
             text-align: center;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
+            box-shadow: var(--shadow-neu);
+            transition: all 0.3s ease;
         }
 
         .team-member:hover {
@@ -31,14 +40,22 @@
             height: 150px;
             border-radius: 50%;
             object-fit: cover;
-            margin-bottom: 1rem;
+            margin: 0 auto 1.5rem;
+            padding: 8px;
+            background: #f0f0f0;
+            box-shadow: var(--shadow-neu);
+        }
+
+        .team-member img:hover {
+            box-shadow: var(--shadow-neu-inset);
         }
 
         .mission-values {
-            background: #f9f9f9;
+            background: #f0f0f0;
             padding: 2rem;
-            border-radius: 8px;
+            border-radius: 12px;
             margin: 2rem 0;
+            box-shadow: var(--shadow-neu);
         }
 
         .mission-values ul {
@@ -47,17 +64,19 @@
         }
 
         .mission-values li {
-            padding: 0.5rem 0;
+            padding: 0.75rem 0;
             position: relative;
-            padding-left: 1.5rem;
+            padding-left: 2rem;
+            transition: transform 0.3s ease;
+            background: #f0f0f0;
+            margin: 0.5rem 0;
+            border-radius: 8px;
+            box-shadow: var(--shadow-neu);
         }
 
-        .mission-values li:before {
-            content: "•";
-            color: #4CAF50;
-            font-weight: bold;
-            position: absolute;
-            left: 0;
+        .mission-values li:hover {
+            transform: translateX(10px);
+            box-shadow: var(--shadow-neu-inset);
         }
 
         .impact-stats {
@@ -68,16 +87,49 @@
         }
 
         .stat {
-            background: #fff;
+            background: #f0f0f0;
             padding: 1.5rem;
-            border-radius: 8px;
+            border-radius: 12px;
             text-align: center;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: var(--shadow-neu);
+            transition: all 0.3s ease;
+        }
+
+        .stat:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat i {
+            font-size: 2rem;
+            color: var(--color-green);
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background: #f0f0f0;
+            border-radius: 50%;
+            box-shadow: var(--shadow-neu);
+        }
+
+        .stat:hover i {
+            box-shadow: var(--shadow-neu-inset);
+        }
+
+        @media screen and (max-width: 768px) {
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .impact-stats {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
     <nav class="navbar">
+        <a href="index.html" class="site-brand">
+            <img src="images/logo.png" alt="Stand With Palestine Logo" class="site-logo">
+            <h1 class="site-title">Stand With Palestine</h1>
+        </a>
         <div class="burger-menu">
             <div class="burger-bar"></div>
             <div class="burger-bar"></div>
@@ -88,42 +140,19 @@
             <a href="news.html">News</a>
             <a href="about.html" class="active">About</a>
             <a href="get-involved.html">Get Involved</a>
+            <a href="gallery.html">Gallery</a>
             <a href="contact.html">Contact Us</a>
         </div>
     </nav>
 
     <div class="content">
-        <h1>About Our Movement</h1>
-        <p>We are a solidarity movement dedicated to supporting the Palestinian cause through humanitarian aid, advocacy, and awareness.</p>
-
-        <h2>Our History</h2>
-        <p>Since our founding, we have been committed to raising awareness about the Palestinian struggle and providing direct humanitarian support to affected communities.</p>
-
-        <div class="team-grid">
-            <div class="team-member">
-                <img src="images/team-1.jpg" alt="Aid Coordinator">
-                <h3>Sarah Ahmed</h3>
-                <p>Humanitarian Aid Coordinator</p>
-                <p>Coordinates emergency relief efforts and medical supply distribution.</p>
-            </div>
-
-            <div class="team-member">
-                <img src="images/team-2.jpg" alt="Community Organizer">
-                <h3>Mohammed Hassan</h3>
-                <p>Community Outreach Director</p>
-                <p>Leads community engagement and awareness campaigns.</p>
-            </div>
-
-            <div class="team-member">
-                <img src="images/team-3.jpg" alt="Medical Coordinator">
-                <h3>Dr. Lisa Chen</h3>
-                <p>Medical Program Director</p>
-                <p>Oversees medical aid initiatives and healthcare support.</p>
-            </div>
+        <div class="about-header">
+            <h1><i class="fas fa-info-circle"></i> About Our Movement</h1>
+            <p>We are a solidarity movement dedicated to supporting the Palestinian cause through humanitarian aid, advocacy, and awareness.</p>
         </div>
 
         <div class="mission-values">
-            <h2>Our Core Values</h2>
+            <h2><i class="fas fa-bullseye"></i> Our Core Values</h2>
             <ul>
                 <li>Humanitarian Support: Providing essential aid and resources</li>
                 <li>Advocacy: Raising awareness and promoting justice</li>
@@ -132,18 +161,45 @@
             </ul>
         </div>
 
+        <h2><i class="fas fa-users"></i> Our Team</h2>
+        <div class="team-grid">
+            <div class="team-member">
+                <img src="images/team-1.jpg" alt="Aid Coordinator">
+                <h3>Sarah Ahmed</h3>
+                <p><i class="fas fa-briefcase"></i> Humanitarian Aid Coordinator</p>
+                <p>Coordinates emergency relief efforts and medical supply distribution.</p>
+            </div>
+
+            <div class="team-member">
+                <img src="images/team-2.jpg" alt="Community Organizer">
+                <h3>Mohammed Hassan</h3>
+                <p><i class="fas fa-users"></i> Community Outreach Director</p>
+                <p>Leads community engagement and awareness campaigns.</p>
+            </div>
+
+            <div class="team-member">
+                <img src="images/team-3.jpg" alt="Medical Coordinator">
+                <h3>Dr. Lisa Chen</h3>
+                <p><i class="fas fa-hospital"></i> Medical Program Director</p>
+                <p>Oversees medical aid initiatives and healthcare support.</p>
+            </div>
+        </div>
+
         <div class="impact-section">
-            <h2>Our Impact</h2>
+            <h2><i class="fas fa-chart-line"></i> Our Impact</h2>
             <div class="impact-stats">
                 <div class="stat">
+                    <i class="fas fa-medkit"></i>
                     <h3>Medical Aid</h3>
                     <p>Delivered essential medical supplies to hospitals and clinics</p>
                 </div>
                 <div class="stat">
+                    <i class="fas fa-graduation-cap"></i>
                     <h3>Education</h3>
                     <p>Supported students with resources and learning materials</p>
                 </div>
                 <div class="stat">
+                    <i class="fas fa-hands-helping"></i>
                     <h3>Community Support</h3>
                     <p>Organized awareness events and solidarity campaigns</p>
                 </div>

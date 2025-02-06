@@ -5,24 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Get Involved - Stand With Palestine</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
+        .get-involved-header {
+            background: #f0f0f0;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow-neu);
+        }
+
         .opportunities-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             margin: 2rem 0;
         }
 
         .opportunity {
-            background: #fff;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
+            background: #f0f0f0;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-neu);
+            transition: all 0.3s ease;
         }
 
         .opportunity:hover {
             transform: translateY(-5px);
+        }
+
+        .opportunity-icon {
+            width: 60px;
+            height: 60px;
+            background: #f0f0f0;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            box-shadow: var(--shadow-neu);
+        }
+
+        .opportunity:hover .opportunity-icon {
+            box-shadow: var(--shadow-neu-inset);
         }
 
         .opportunity-image {
@@ -57,45 +82,77 @@
         }
 
         .appeal-card {
-            background: #fff;
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            background: #f0f0f0;
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            box-shadow: var(--shadow-neu);
         }
 
         .progress-bar {
             background: #f0f0f0;
-            border-radius: 4px;
-            height: 8px;
+            height: 20px;
+            border-radius: 10px;
             margin: 1rem 0;
+            box-shadow: var(--shadow-neu-inset);
+            overflow: hidden;
         }
 
         .progress {
-            background: #4CAF50;
             height: 100%;
-            border-radius: 4px;
+            background: var(--color-green);
+            border-radius: 10px;
+            transition: width 0.3s ease;
         }
 
-        .calculator-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            margin: 1.5rem 0;
+        .calculator {
+            background: #f0f0f0;
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            box-shadow: var(--shadow-neu);
         }
 
         .calculator-item {
-            background: #fff;
-            padding: 1.5rem;
+            background: #f0f0f0;
+            padding: 1rem;
             border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            margin: 1rem 0;
+            box-shadow: var(--shadow-neu-inset);
         }
 
-        .calculator-item input {
+        .calculator input {
             width: 100%;
-            padding: 0.5rem;
+            padding: 0.75rem;
+            border: none;
+            border-radius: 8px;
+            background: #f0f0f0;
+            box-shadow: var(--shadow-neu-inset);
+            margin-top: 0.5rem;
+        }
+
+        .calculator input:focus {
+            outline: none;
+            box-shadow: var(--shadow-neu);
+        }
+
+        .impact-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .impact-item {
+            background: #f0f0f0;
+            padding: 1rem;
+            border-radius: 8px;
             margin: 0.5rem 0;
-            border: 1px solid #ddd;
-            border-radius: 4px;
+            box-shadow: var(--shadow-neu);
+            transition: all 0.3s ease;
+        }
+
+        .impact-item:hover {
+            transform: translateX(10px);
+            box-shadow: var(--shadow-neu-inset);
         }
 
         .events-timeline {
@@ -107,37 +164,81 @@
             grid-template-columns: auto 1fr;
             gap: 1.5rem;
             margin-bottom: 1.5rem;
-            padding: 1rem;
-            background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 12px;
+            border: 1px solid var(--color-glass-border);
+            box-shadow: var(--shadow-glass);
+            transition: all 0.3s ease;
+        }
+
+        .event-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 12px 40px rgba(31, 38, 135, 0.4);
         }
 
         .event-date {
-            background: #4CAF50;
+            background: var(--color-green);
             color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
+            padding: 1rem;
+            border-radius: 8px;
             text-align: center;
+            min-width: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
 
         .register-btn {
-            background: #4CAF50;
+            background: var(--color-green);
             color: white;
             border: none;
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
             cursor: pointer;
-            transition: background 0.3s ease;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
         }
 
         .register-btn:hover {
-            background: #45a049;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+        }
+
+        .register-btn:active {
+            transform: translateY(1px);
+        }
+
+        @media screen and (max-width: 768px) {
+            .opportunities-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .event-item {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .event-date {
+                width: 100%;
+                flex-direction: row;
+                justify-content: center;
+                gap: 1rem;
+            }
         }
     </style>
 </head>
 <body>
     <nav class="navbar">
+        <a href="index.html" class="site-brand">
+            <img src="images/logo.png" alt="Stand With Palestine Logo" class="site-logo">
+            <h1 class="site-title">Stand With Palestine</h1>
+        </a>
         <div class="burger-menu">
             <div class="burger-bar"></div>
             <div class="burger-bar"></div>
@@ -148,77 +249,80 @@
             <a href="news.html">News</a>
             <a href="about.html">About</a>
             <a href="get-involved.html" class="active">Get Involved</a>
+            <a href="gallery.html">Gallery</a>
             <a href="contact.html">Contact Us</a>
         </div>
     </nav>
 
     <div class="content">
-        <h1>Support Palestine</h1>
-        <p>There are many ways to contribute to our solidarity movement and support the Palestinian cause.</p>
+        <div class="get-involved-header">
+            <h1><i class="fas fa-hands-helping"></i> Support Palestine</h1>
+            <p>There are many ways to contribute to our solidarity movement and support the Palestinian cause.</p>
+        </div>
 
         <div class="opportunities-grid">
             <div class="opportunity">
                 <img src="images/donate-medical.jpg" alt="Medical Aid" class="opportunity-image">
                 <div class="opportunity-content">
-                    <h3>Emergency Medical Aid</h3>
+                    <h3><i class="fas fa-medkit"></i> Emergency Medical Aid</h3>
                     <p>Support our medical supply initiatives for hospitals and clinics in Palestine.</p>
-                    <a href="#" class="button">Donate Now</a>
+                    <a href="#" class="button">Donate Now <i class="fas fa-heart"></i></a>
                 </div>
             </div>
 
             <div class="opportunity">
                 <img src="images/volunteer-aid.jpg" alt="Volunteer" class="opportunity-image">
                 <div class="opportunity-content">
-                    <h3>Volunteer</h3>
+                    <h3><i class="fas fa-user-friends"></i> Volunteer</h3>
                     <p>Join our humanitarian aid distribution and community support programs.</p>
-                    <a href="#" class="button">Join Us</a>
+                    <a href="#" class="button">Join Us <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
 
             <div class="opportunity">
                 <img src="images/advocacy.jpg" alt="Advocacy" class="opportunity-image">
                 <div class="opportunity-content">
-                    <h3>Advocacy</h3>
+                    <h3><i class="fas fa-bullhorn"></i> Advocacy</h3>
                     <p>Participate in awareness campaigns and advocacy initiatives.</p>
-                    <a href="#" class="button">Take Action</a>
+                    <a href="#" class="button">Take Action <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
 
         <div class="urgent-appeal">
-            <h2>Urgent Appeals</h2>
+            <h2><i class="fas fa-exclamation-circle"></i> Urgent Appeals</h2>
             <div class="appeal-grid">
                 <div class="appeal-card">
-                    <h3>Medical Supplies</h3>
+                    <h3><i class="fas fa-medkit"></i> Medical Supplies</h3>
                     <p>Critical need for medical supplies and equipment.</p>
                     <div class="progress-bar">
                         <div class="progress" style="width: 65%"></div>
                     </div>
                     <p class="goal">Goal: $50,000</p>
-                    <a href="#" class="button">Support</a>
+                    <a href="#" class="button">Support <i class="fas fa-heart"></i></a>
                 </div>
                 <div class="appeal-card">
-                    <h3>Emergency Food Aid</h3>
+                    <h3><i class="fas fa-utensils"></i> Emergency Food Aid</h3>
                     <p>Providing essential food supplies to families.</p>
                     <div class="progress-bar">
                         <div class="progress" style="width: 45%"></div>
                     </div>
                     <p class="goal">Goal: $30,000</p>
-                    <a href="#" class="button">Support</a>
+                    <a href="#" class="button">Support <i class="fas fa-heart"></i></a>
                 </div>
             </div>
         </div>
 
         <div class="donation-calculator">
-            <h2>Impact Calculator</h2>
-            <div class="calculator-grid">
+            <h2><i class="fas fa-calculator"></i> Impact Calculator</h2>
+            <div class="calculator">
                 <div class="calculator-item">
-                    <h3>Medical Supplies</h3>
+                    <h3><i class="fas fa-medkit"></i> Medical Supplies</h3>
                     <input type="number" id="medicalAmount" min="10" step="10" value="50">
                     <p class="impact-text">This can provide basic medical supplies for <span id="medicalImpact">5</span> people</p>
                 </div>
                 <div class="calculator-item">
-                    <h3>Food Aid</h3>
+                    <h3><i class="fas fa-utensils"></i> Food Aid</h3>
                     <input type="number" id="foodAmount" min="10" step="10" value="50">
                     <p class="impact-text">This can feed <span id="foodImpact">2</span> families for a week</p>
                 </div>
@@ -226,22 +330,32 @@
         </div>
 
         <div class="upcoming-events">
-            <h2>Upcoming Events</h2>
+            <h2><i class="fas fa-calendar-alt"></i> Upcoming Events</h2>
             <div class="events-timeline">
                 <div class="event-item">
-                    <div class="event-date">MAR 25</div>
+                    <div class="event-date">
+                        <i class="fas fa-calendar"></i>
+                        <span>MAR 25</span>
+                    </div>
                     <div class="event-content">
-                        <h3>Emergency Aid Distribution</h3>
+                        <h3><i class="fas fa-box-heart"></i> Emergency Aid Distribution</h3>
                         <p>Join us in distributing emergency supplies to families in need.</p>
-                        <button class="register-btn">Register to Help</button>
+                        <button class="register-btn">
+                            <i class="fas fa-user-plus"></i> Register to Help
+                        </button>
                     </div>
                 </div>
                 <div class="event-item">
-                    <div class="event-date">APR 02</div>
+                    <div class="event-date">
+                        <i class="fas fa-calendar"></i>
+                        <span>APR 02</span>
+                    </div>
                     <div class="event-content">
-                        <h3>Community Awareness Workshop</h3>
+                        <h3><i class="fas fa-chalkboard-teacher"></i> Community Awareness Workshop</h3>
                         <p>Learn about the current situation and how to effectively help.</p>
-                        <button class="register-btn">Register Now</button>
+                        <button class="register-btn">
+                            <i class="fas fa-user-plus"></i> Register Now
+                        </button>
                     </div>
                 </div>
             </div>
