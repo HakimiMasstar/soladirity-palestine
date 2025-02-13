@@ -50,12 +50,12 @@
         .gallery-item:nth-child(1) { grid-column: span 8; grid-row: span 2; }
         .gallery-item:nth-child(2) { grid-column: span 4; }
         .gallery-item:nth-child(3) { grid-column: span 4; }
-        .gallery-item:nth-child(4) { grid-column: span 4; grid-row: span 2; }
+        .gallery-item:nth-child(4) { grid-column: span 3; grid-row: span 2; }
         .gallery-item:nth-child(5) { grid-column: span 4; }
-        .gallery-item:nth-child(6) { grid-column: span 4; }
+        .gallery-item:nth-child(6) { grid-column: span 5; }
         .gallery-item:nth-child(7) { grid-column: span 6; }
-        .gallery-item:nth-child(8) { grid-column: span 6; }
-        .gallery-item:nth-child(9) { grid-column: span 12; }
+        .gallery-item:nth-child(8) { grid-column: span 3; }
+        .gallery-item:nth-child(9) { grid-column: span 12;}
 
         .gallery-caption {
             position: absolute;
@@ -84,6 +84,88 @@
                 height: 300px;
             }
         }
+
+        /* Updated Video Gallery Styles */
+        .video-item {
+            position: relative;
+            min-height: 300px;
+            cursor: pointer;
+            background: #000; /* Dark background for video container */
+        }
+
+        .video-item video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: #000; /* Dark background for video */
+        }
+
+        .play-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            z-index: 2;
+            cursor: pointer;
+        }
+
+        .play-icon i {
+            font-size: 24px;
+            color: white;
+        }
+
+        .video-item:hover .play-icon {
+            background: rgba(0, 0, 0, 0.8);
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+
+        .video-item.playing .play-icon {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .video-item.playing:hover .play-icon {
+            opacity: 1;
+        }
+
+        /* Add error state styling */
+        .video-item.video-error::after {
+            content: "Video unavailable";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 10px 20px;
+            border-radius: 4px;
+        }
+
+        @media screen and (max-width: 768px) {
+            .video-item {
+                min-height: 250px;
+            }
+            
+            .play-icon {
+                width: 50px;
+                height: 50px;
+            }
+
+            .play-icon i {
+                font-size: 20px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -109,10 +191,14 @@
 
     <div class="content">
         <div class="gallery-header">
-            <h1>Photo Gallery</h1>
+            <h1>Media Gallery</h1>
             <p>A visual journey through our humanitarian efforts and community support.</p>
         </div>
 
+        <!-- Images Gallery Section -->
+        <div class="gallery-header">
+            <h2>Photo Gallery</h2>
+        </div>
         <div class="gallery-grid">
             <div class="gallery-item">
                 <img src="img/Local volunteers distributing aid packages.jpg" alt="Community Support">
@@ -129,7 +215,7 @@
                 </div>
             </div>
             <div class="gallery-item">
-                <img src="img/education support.txt" alt="Education">
+                <img src="img/education support.webp" alt="Education">
                 <div class="gallery-caption">
                     <h3>Education</h3>
                     <p>Supporting children's education</p>
@@ -164,17 +250,63 @@
                 </div>
             </div>
             <div class="gallery-item">
+                <img src="img/Humanitarian Aid.webp" alt="Humanitarian Aid">
+                <div class="gallery-caption">
+                    <h3>Humanitarian Aid</h3>
+                    <p>Making a difference together</p>
+                </div>
+            </div>
+            <div class="gallery-item">
                 <img src="img/Youth Programs.jpg" alt="Youth Programs">
                 <div class="gallery-caption">
                     <h3>Youth Programs</h3>
                     <p>Empowering the next generation</p>
                 </div>
             </div>
-            <div class="gallery-item">
-                <img src="img/Humanitarian Aid.webp" alt="Humanitarian Aid">
+        </div>
+
+        <!-- Videos Gallery Section -->
+        <div class="gallery-header">
+            <h2>Video Gallery</h2>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-item video-item">
+                <video loop poster="img/video-thumbnails/thumbnail-1.jpg" preload="metadata">
+                    <source src="video/intifada.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="play-icon">
+                    <i class="fas fa-play"></i>
+                </div>
                 <div class="gallery-caption">
-                    <h3>Humanitarian Aid</h3>
-                    <p>Making a difference together</p>
+                    <h3>TINGGI KE INTIFADA !!!</h3>
+                    <p></p>
+                </div>
+            </div>
+            <div class="gallery-item video-item">
+                <video loop poster="img/video-thumbnails/thumbnail-2.jpg" preload="metadata">
+                    <source src="video/palestine-gallery.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="play-icon">
+                    <i class="fas fa-play"></i>
+                </div>
+                <div class="gallery-caption">
+                    <h3>NEWS</h3>
+                    <p>Get in touch.</p>
+                </div>
+            </div>
+            <div class="gallery-item video-item">
+                <video loop poster="img/video-thumbnails/thumbnail-3.jpg" preload="metadata">
+                    <source src="video/palestine-gallery-2.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="play-icon">
+                    <i class="fas fa-play"></i>
+                </div>
+                <div class="gallery-caption">
+                    <h3>NEWS</h3>
+                    <p>Get in touch.</p>
                 </div>
             </div>
         </div>
@@ -187,6 +319,66 @@
     <script>
         document.querySelector('.burger-menu').addEventListener('click', function() {
             document.querySelector('.nav-links').classList.toggle('active');
+        });
+
+        // Improved video click functionality
+        document.querySelectorAll('.video-item').forEach(item => {
+            const video = item.querySelector('video');
+            const playIcon = item.querySelector('.play-icon');
+            
+            // Set initial volume
+            video.volume = 0.5;
+
+            item.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                try {
+                    if (video.paused) {
+                        // Pause all other videos first
+                        document.querySelectorAll('.video-item video').forEach(v => {
+                            if (v !== video) {
+                                v.pause();
+                                v.parentElement.classList.remove('playing');
+                            }
+                        });
+                        
+                        // Play this video
+                        const playPromise = video.play();
+                        if (playPromise !== undefined) {
+                            playPromise.then(() => {
+                                item.classList.add('playing');
+                                playIcon.innerHTML = '<i class="fas fa-pause"></i>';
+                            }).catch(error => {
+                                console.error("Video play failed:", error);
+                                // Show error message to user
+                                alert("Video playback failed. Please try again.");
+                            });
+                        }
+                    } else {
+                        // Pause video
+                        video.pause();
+                        item.classList.remove('playing');
+                        playIcon.innerHTML = '<i class="fas fa-play"></i>';
+                    }
+                } catch (error) {
+                    console.error("Video interaction error:", error);
+                }
+            });
+
+            // Handle video ending
+            video.addEventListener('ended', function() {
+                item.classList.remove('playing');
+                playIcon.innerHTML = '<i class="fas fa-play"></i>';
+                video.currentTime = 0;
+            });
+
+            // Handle video loading errors
+            video.addEventListener('error', function() {
+                console.error("Error loading video:", video.error);
+                item.classList.add('video-error');
+                // Show error message to user
+                alert("Error loading video. Please check your connection and try again.");
+            });
         });
     </script>
 </body>
