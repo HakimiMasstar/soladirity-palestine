@@ -120,6 +120,27 @@
             box-shadow: var(--shadow-neu);
         }
 
+        .search-box input {
+            flex: 1;
+            padding: 0.8rem 1rem;
+            font-size: 1rem;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            outline: none;
+            background: #fff;
+        }
+
+        .search-box button {
+            padding: 0.8rem 1.5rem;
+            margin-left: 10px;
+            background-color: var(--color-green);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
         @media screen and (max-width: 768px) {
             .news-filters {
                 flex-direction: column;
@@ -127,6 +148,16 @@
 
             .filter-btn {
                 width: 100%;
+            }
+
+            .search-box input {
+                width: 100%;  /* Make the button take full width on small screens */
+                margin-bottom: 10px;  /* Space between input and button */
+            }
+
+            .search-box button {
+                width: 100%;  /* Make the button take full width on small screens */
+                margin-left: 0;
             }
         }
     </style>
