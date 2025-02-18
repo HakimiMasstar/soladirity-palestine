@@ -152,6 +152,27 @@
             border-radius: 4px;
         }
 
+        /* Responsive YouTube Video */
+        .youtube-video {
+            position: relative;
+            width: 100%;
+            max-width: 800px; /* Optional: Adjust max width */
+            margin: 0 auto;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: var(--shadow-neu);
+        }
+
+        .youtube-video iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
         @media screen and (max-width: 768px) {
             .video-item {
                 min-height: 250px;
@@ -310,6 +331,29 @@
                 </div>
             </div>
         </div>
+
+        <!-- External Media Section -->
+        <div class="gallery-header">
+            <h2>Featured Video</h2>
+        </div>
+        <div class="youtube-video">
+            <iframe src="https://www.youtube.com/embed/ra7A45isoio" 
+                    frameborder="0" 
+                    allowfullscreen>
+            </iframe>
+        </div>
+
+        <!-- Audio Integration Section -->
+        <div class="gallery-header">
+            <h2>Audio Message From Palestinian Leader</h2>
+        </div>
+        <div class="audio-container">
+            <audio controls>
+                <source src="audio/palestinian-speech.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+
     </div>
 
     <footer class="footer">
