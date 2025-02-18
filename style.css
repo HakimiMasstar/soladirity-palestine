@@ -194,6 +194,23 @@ body {
     box-shadow: var(--shadow-neu);
 }
 
+.social-links {
+    margin-top: 0.5rem;
+}
+
+.social-links a {
+    margin: 0 10px;
+    color: var(--color-black);
+    font-size: 1.5rem;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+.social-links a:hover {
+    color: var(--color-primary);
+}
+
+
 /* Bento Grid */
 .bento-grid {
     display: grid;
